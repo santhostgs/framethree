@@ -269,7 +269,7 @@ img { max-width: 100%; display: block; }
 .hero-slide:nth-child(2) { background-image: url('../photos/cr2.jpg'); animation-delay: 5s; }
 .hero-slide:nth-child(3) { background-image: url('../photos/cr3.jpg'); animation-delay: 10s; }
 .hero-slide:nth-child(4) { background-image: url('../photos/cr4.jpg'); animation-delay: 15s; }
-.hero-slide:nth-child(5) { background-image: url('../photos/cr5.jpg'); animation-delay: 20s; }
+.hero-slide:nth-child(5) { background-image: url('../photos/cr5.jpg'); background-position: center 12%; animation-delay: 20s; }
 
 @keyframes heroSlide {
   0% { opacity: 0; transform: scale(1.12); }
