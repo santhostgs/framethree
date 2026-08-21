@@ -120,10 +120,12 @@ img { max-width: 100%; display: block; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(26, 26, 46, 0.75);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(120deg, rgba(255, 107, 157, 0.22), rgba(0, 212, 255, 0.22)),
+    rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar .container {
@@ -137,21 +139,47 @@ img { max-width: 100%; display: block; }
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-head);
-  font-size: 1.4rem;
-  font-weight: 700;
+  gap: 0.65rem;
   color: #fff;
 }
 
-.logo-icon {
-  display: inline-block;
-  animation: float 3s ease-in-out infinite;
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: transparent;
+  border: 2px solid var(--primary);
+  transform: rotate(45deg);
+  box-shadow: 0 0 14px rgba(0, 212, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(6deg); }
+.logo:hover .logo-mark { transform: rotate(45deg) scale(1.08); border-color: var(--secondary); box-shadow: 0 0 18px rgba(255, 107, 157, 0.6); }
+
+.logo-mark span {
+  display: inline-block;
+  transform: rotate(-45deg);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.logo-mark-sm { width: 28px; height: 28px; border-radius: 7px; }
+.logo-mark-sm span { font-size: 0.65rem; }
+
+.logo-text {
+  font-family: 'Sacramento', cursive;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
 }
 
 .nav-links {
@@ -160,12 +188,17 @@ img { max-width: 100%; display: block; }
 }
 
 .nav-links a {
-  color: #eaeaea;
-  font-weight: 500;
+  color: #fff;
+  font-weight: 600;
   font-size: 0.95rem;
   position: relative;
   padding: 0.25rem 0;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  text-shadow: 0 0 16px rgba(0, 212, 255, 0.6);
 }
 
 .nav-links a::after {
@@ -282,9 +315,47 @@ img { max-width: 100%; display: block; }
   position: absolute;
   inset: 0;
   z-index: -2;
-  background:
-    linear-gradient(180deg, rgba(26,26,46,0.55) 0%, rgba(26,26,46,0.35) 40%, rgba(26,26,46,0.85) 100%),
-    linear-gradient(90deg, rgba(26,26,46,0.5) 0%, transparent 30%, transparent 70%, rgba(26,26,46,0.5) 100%);
+  background: linear-gradient(180deg, rgba(26,26,46,0.32) 0%, rgba(26,26,46,0.1) 35%, rgba(26,26,46,0.5) 100%);
+}
+
+/* ---------- Minimal hero content (home) ---------- */
+.hero-home .hero-content { max-width: 640px; }
+
+.hero-home .hero-eyebrow {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.8rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-home .hero-title {
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
+}
+
+.hero-home .hero-sub {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+}
+
+.hero-home .btn-primary,
+.hero-home .btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+.hero-home .btn-primary:hover,
+.hero-home .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: none;
 }
 
 .hero-dots {
@@ -744,11 +815,14 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.05em;
 }
 .footer-logo {
-  font-family: var(--font-head);
-  font-size: 1.3rem;
-  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
   color: #fff;
 }
+
+.footer-logo .logo-text { font-size: 1.7rem; }
 .footer p, .footer a { font-size: 0.9rem; color: #b8b8cf; }
 .footer ul li { margin-bottom: 0.5rem; }
 .footer a:hover { color: var(--primary); }
