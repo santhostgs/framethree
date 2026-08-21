@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://framethree.netlify.app/</loc>
+    <loc>https://framethree.in/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://framethree.netlify.app/events.html</loc>
+    <loc>https://framethree.in/events.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://framethree.netlify.app/portfolio.html</loc>
+    <loc>https://framethree.in/portfolio.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://framethree.netlify.app/social-branding.html</loc>
+    <loc>https://framethree.in/social-branding.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://framethree.netlify.app/team.html</loc>
+    <loc>https://framethree.in/team.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://framethree.netlify.app/contact.html</loc>
+    <loc>https://framethree.in/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
