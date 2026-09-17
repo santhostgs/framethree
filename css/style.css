@@ -770,6 +770,40 @@ img { max-width: 100%; display: block; }
 }
 .team-contact a:hover { background: var(--dark); color: #fff; }
 
+/* ---------- Testimonials ---------- */
+.testimonial {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 2.2rem 1.7rem 1.8rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+.testimonial:hover { transform: translateY(-8px); }
+
+.testimonial-quote {
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #444;
+  margin-bottom: 1.4rem;
+}
+.testimonial-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -1.6rem;
+  left: -0.2rem;
+  font-family: var(--font-head);
+  font-size: 3.2rem;
+  line-height: 1;
+  color: var(--primary);
+  opacity: 0.3;
+}
+
+.testimonial-author { display: flex; flex-direction: column; }
+.testimonial-name { font-weight: 700; color: var(--dark); font-size: 0.95rem; }
+.testimonial-role { font-size: 0.8rem; color: var(--primary); font-weight: 600; margin-top: 0.15rem; }
+
 /* ---------- Process / Steps ---------- */
 .steps {
   display: grid;
@@ -1090,7 +1124,8 @@ body .pricing-card,
 body .team-card,
 body .step,
 body .contact-card,
-body .contact-form {
+body .contact-form,
+body .testimonial {
   background: linear-gradient(180deg, var(--sk-surface-hi), var(--sk-surface));
   border: 1px solid var(--sk-edge);
   box-shadow:
@@ -1102,7 +1137,8 @@ body .contact-form {
 body .card:hover,
 body .benefit:hover,
 body .pricing-card:hover,
-body .team-card:hover {
+body .team-card:hover,
+body .testimonial:hover {
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.85) inset,
     0 -6px 10px rgba(0, 0, 0, 0.04) inset,
