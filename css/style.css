@@ -106,6 +106,12 @@ img { max-width: 100%; display: block; }
   border: 2px solid #fff;
 }
 
+.btn-whatsapp {
+  background: linear-gradient(90deg, #25d366, #1fb955);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
 .btn:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
 
 .cta-row {
@@ -842,6 +848,18 @@ img { max-width: 100%; display: block; }
 }
 .form-group textarea { resize: vertical; min-height: 120px; }
 
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.form-status {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  min-height: 1.2em;
+}
+.form-status-success { color: #1a9c5c; }
+.form-status-error { color: #d94f4f; }
+
 /* ---------- Sections with dark background ---------- */
 .section-dark {
   background: var(--dark);
@@ -911,6 +929,42 @@ img { max-width: 100%; display: block; }
   border: 1px dashed var(--primary);
 }
 
+/* ---------- WhatsApp floating button ---------- */
+.whatsapp-fab {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #32e070, #22bf5e);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 -3px 6px rgba(0, 0, 0, 0.18) inset,
+    0 8px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-fab:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.45) inset,
+    0 -3px 6px rgba(0, 0, 0, 0.18) inset,
+    0 12px 26px rgba(0, 0, 0, 0.35);
+}
+
+.whatsapp-fab svg { width: 30px; height: 30px; fill: #fff; }
+
+@media (max-width: 768px) {
+  .whatsapp-fab { right: 1rem; bottom: 1rem; width: 52px; height: 52px; }
+  .whatsapp-fab svg { width: 26px; height: 26px; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 992px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
@@ -978,6 +1032,10 @@ body .btn-primary {
 body .btn-secondary {
   background: linear-gradient(180deg, #7fe6ff 0%, var(--secondary) 55%, #00a8cc 100%);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+body .btn-whatsapp {
+  background: linear-gradient(180deg, #4be388 0%, #25d366 55%, #1a9c4e 100%);
 }
 
 body .btn:hover {
