@@ -358,6 +358,27 @@ img { max-width: 100%; display: block; }
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
 }
 
+/* A hero photo that already carries its own baked-in title/copy —
+   show it full-bleed without stacking a second title on top. */
+.hero-photo-banner::after { background: rgba(26, 26, 46, 0.12); }
+
+@media (max-width: 768px) {
+  .hero-photo-banner { background: var(--dark); }
+  .hero-photo-banner::before { background-size: contain; background-repeat: no-repeat; background-position: center; }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ---------- Minimal hero content (home) ---------- */
 .hero-home .hero-content { max-width: 640px; }
 
@@ -917,4 +938,221 @@ img { max-width: 100%; display: block; }
   .footer-grid { grid-template-columns: 1fr; text-align: center; }
   .pricing-card.popular { transform: none; }
   .pricing-card.popular:hover { transform: translateY(-8px); }
+}
+
+/* ==========================================================================
+   FrameThree — Tactile / Skeuomorphic Accents
+   Soft raised and pressed surfaces layered on top of the base styles above
+   -- subtle bevels, inset highlights, embossed cards -- applied site-wide.
+   ==========================================================================
+
+body {
+  background: #ece9e4;
+}
+
+/* ---------- Shared tactile tokens ---------- */
+body {
+  --sk-surface: #f4f1eb;
+  --sk-surface-hi: #ffffff;
+  --sk-surface-lo: #d8d4cb;
+  --sk-edge: rgba(26, 26, 46, 0.12);
+}
+
+/* ---------- Buttons: raised, pressable ---------- */
+body .btn {
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 -2px 4px rgba(0, 0, 0, 0.12) inset,
+    0 6px 12px rgba(26, 26, 46, 0.22),
+    0 1px 0 rgba(255, 255, 255, 0.6);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+body .btn-primary {
+  background: linear-gradient(180deg, #ff9dbf 0%, var(--primary) 55%, #e14f84 100%);
+}
+
+body .btn-secondary {
+  background: linear-gradient(180deg, #7fe6ff 0%, var(--secondary) 55%, #00a8cc 100%);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+body .btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.55) inset,
+    0 -2px 4px rgba(0, 0, 0, 0.12) inset,
+    0 10px 18px rgba(26, 26, 46, 0.28),
+    0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+body .btn:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.25) inset,
+    0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+body .hero-home .btn-primary,
+body .hero-home .btn-secondary {
+  background: linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0.08));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 -2px 6px rgba(0, 0, 0, 0.2) inset,
+    0 6px 14px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* ---------- Nav bar: brushed glossy strip ---------- */
+body .navbar {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.25)),
+    linear-gradient(120deg, rgba(255, 107, 157, 0.22), rgba(0, 212, 255, 0.22)),
+    rgba(0, 0, 0, 0.78);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08) inset, 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+body .logo-mark {
+  background: linear-gradient(160deg, rgba(255,255,255,0.15), rgba(0,0,0,0.25));
+  border: 2px solid var(--primary);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 -2px 4px rgba(0, 0, 0, 0.35) inset,
+    0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Cards: embossed panels on a paper-ish ground ---------- */
+body .card,
+body .benefit:not(.benefit-plain),
+body .pricing-card,
+body .team-card,
+body .step,
+body .contact-card,
+body .contact-form {
+  background: linear-gradient(180deg, var(--sk-surface-hi), var(--sk-surface));
+  border: 1px solid var(--sk-edge);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 -6px 10px rgba(0, 0, 0, 0.04) inset,
+    0 10px 22px rgba(26, 26, 46, 0.14);
+}
+
+body .card:hover,
+body .benefit:hover,
+body .pricing-card:hover,
+body .team-card:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.85) inset,
+    0 -6px 10px rgba(0, 0, 0, 0.04) inset,
+    0 18px 32px rgba(26, 26, 46, 0.2);
+}
+
+body .card-icon,
+body .benefit .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--sk-surface-hi), var(--sk-surface-lo));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 -3px 5px rgba(0, 0, 0, 0.08) inset,
+    0 3px 6px rgba(26, 26, 46, 0.15);
+  font-size: 1.5rem;
+}
+
+body .card-icon { margin-bottom: 1.2rem; }
+
+body .avatar {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 -4px 8px rgba(0, 0, 0, 0.25) inset,
+    0 8px 18px rgba(0, 0, 0, 0.25);
+  border: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+body .badge-popular {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+body .benefit-plain {
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(0,0,0,0.12));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 -3px 8px rgba(0, 0, 0, 0.35) inset,
+    0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+body .benefit-plain:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    0 -3px 8px rgba(0, 0, 0, 0.35) inset,
+    0 10px 20px rgba(0, 0, 0, 0.38);
+}
+
+/* ---------- Form fields: pressed-in wells ---------- */
+body .form-group input,
+body .form-group select,
+body .form-group textarea {
+  background: #ece8e0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.1) inset,
+    0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+body .form-group input:focus,
+body .form-group select:focus,
+body .form-group textarea:focus {
+  background: #fff;
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.08) inset,
+    0 0 0 3px rgba(255, 107, 157, 0.2);
+}
+
+/* ---------- Gallery items: framed like a print ---------- */
+body .gallery-item {
+  border: 6px solid var(--sk-surface-hi);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 10px 24px rgba(26, 26, 46, 0.28);
+}
+
+/* ---------- Notice / dashed callout ---------- */
+body .notice {
+  background: linear-gradient(180deg, #fff, #fdf1f5);
+  border: 1px solid var(--sk-edge);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 6px 14px rgba(26, 26, 46, 0.1);
+}
+
+/* ---------- Section title underline chip ---------- */
+body .hero-eyebrow {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.3) inset,
+    0 -2px 4px rgba(0, 0, 0, 0.2) inset,
+    0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Footer: darker recessed panel ---------- */
+body .footer {
+  background: linear-gradient(180deg, #14141f, var(--dark));
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) inset;
+}
+
+body .footer-logo .logo-mark {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.3) inset,
+    0 -2px 4px rgba(0, 0, 0, 0.3) inset,
+    0 2px 5px rgba(0, 0, 0, 0.4);
 }
