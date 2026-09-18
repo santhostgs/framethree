@@ -310,6 +310,16 @@ img { max-width: 100%; display: block; }
 .hero-slide:nth-child(4) { background-image: url('../photos/cr4.jpg'); animation-delay: 15s; }
 .hero-slide:nth-child(5) { background-image: url('../photos/wedding1.jpg'); background-position: center 20%; animation-delay: 20s; }
 
+/* Smaller, heavily compressed images for mobile viewports — cuts hero
+   payload from ~2.5MB to ~350KB combined, which is where LCP is lost. */
+@media (max-width: 768px) {
+  .hero-slide:nth-child(1) { background-image: url('../photos/cr1-mobile.jpg'); }
+  .hero-slide:nth-child(2) { background-image: url('../photos/cr2-mobile.jpg'); }
+  .hero-slide:nth-child(3) { background-image: url('../photos/cr3-mobile.jpg'); }
+  .hero-slide:nth-child(4) { background-image: url('../photos/cr4-mobile.jpg'); }
+  .hero-slide:nth-child(5) { background-image: url('../photos/wedding1-mobile.jpg'); }
+}
+
 @keyframes heroSlide {
   0% { opacity: 0; transform: scale(1.12); }
   4% { opacity: 1; transform: scale(1.06); }
