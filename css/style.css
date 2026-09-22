@@ -733,6 +733,13 @@ img { max-width: 100%; display: block; }
 }
 .price span { font-size: 1rem; font-weight: 400; color: #777; }
 
+.pricing-tagline {
+  margin: 0.9rem 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #777;
+}
+
 .pricing-features { text-align: left; margin: 1.5rem 0; }
 .pricing-features li {
   padding: 0.5rem 0;
