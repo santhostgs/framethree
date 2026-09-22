@@ -740,6 +740,30 @@ img { max-width: 100%; display: block; }
   color: #777;
 }
 
+.pricing-contact-note {
+  margin: 1.4rem 0 1rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--primary);
+  text-align: center;
+}
+
+.pricing-footnote {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #c7c7dd;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  text-align: left;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pricing-footnote strong { color: #fff; }
+
 .pricing-features { text-align: left; margin: 1.5rem 0; }
 .pricing-features li {
   padding: 0.5rem 0;
