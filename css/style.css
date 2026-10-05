@@ -188,6 +188,14 @@ img { max-width: 100%; display: block; }
   color: #fff;
 }
 
+.logo-img {
+  display: block;
+  height: 46px;
+  width: auto;
+}
+
+.logo-img-sm { height: 34px; }
+
 .nav-links {
   display: flex;
   gap: 2rem;
