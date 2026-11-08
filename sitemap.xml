@@ -26,11 +26,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://framethree.in/team.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://framethree.in/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
