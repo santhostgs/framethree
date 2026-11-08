@@ -692,6 +692,14 @@ img { max-width: 100%; display: block; }
 
 .gallery-item:hover { box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35); }
 
+.map-embed {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  line-height: 0;
+}
+.map-embed iframe { display: block; }
+
 .gallery-item img {
   width: 100%;
   height: 100%;
@@ -1278,6 +1286,13 @@ body .form-group textarea:focus {
 
 /* ---------- Gallery items: framed like a print ---------- */
 body .gallery-item {
+  border: 6px solid var(--sk-surface-hi);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 10px 24px rgba(38, 39, 42, 0.28);
+}
+
+body .map-embed {
   border: 6px solid var(--sk-surface-hi);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.7) inset,
